@@ -6,6 +6,9 @@ from awsglue.job import Job
 from awsglue.dynamicframe import DynamicFrame
 from awsglue.utils import getResolvedOptions
 from pipelines.youtube.shared.consts import ARGS, CSV_OPTIONS, MAPPINGS, PREDICATE, INPUT_PATH, OUTPUT_PATH
+import structlog
+
+logger = structlog.get_logger(__name__)
 
 ARGS = getResolvedOptions(sys.argv, ["JOB_NAME"])
 

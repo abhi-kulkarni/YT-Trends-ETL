@@ -1,13 +1,12 @@
 
-import logging
 from typing import Tuple
 import urllib
 import awswrangler as wr
 import pandas as pd
 from pipelines.youtube.shared.consts import S3_CLEANSED_PATH, GLUE_DB, GLUE_TABLE, WRITE_MODE
+import structlog
 
-logger = logging.getLogger()
-logger.setLevel(logging.INFO)
+logger = structlog.get_logger(__name__)
 
 def parse_s3_event(event: dict) -> Tuple[str, str]:
     """Extract bucket and key from S3 event"""

@@ -1,8 +1,7 @@
-import logging
 from pipelines.youtube.shared.utils import parse_s3_event, read_json_from_s3, transform, write_to_parquet
+import structlog
 
-logger = logging.getLogger()
-logger.setLevel(logging.INFO)
+logger = structlog.get_logger(__name__)
 
 def lambda_handler(event, context):
     try:
