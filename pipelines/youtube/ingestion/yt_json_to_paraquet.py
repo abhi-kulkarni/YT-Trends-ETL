@@ -4,7 +4,6 @@ from pipelines.youtube.shared.utils import parse_s3_event, read_json_from_s3, tr
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-# Lambda Handler
 def lambda_handler(event, context):
     try:
         bucket, key = parse_s3_event(event)
