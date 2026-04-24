@@ -36,4 +36,5 @@ MAPPINGS = [
     ("comments_disabled", "boolean", "comments_disabled", "boolean"),
     ("ratings_disabled", "boolean", "ratings_disabled", "boolean"),
     ("video_error_or_removed", "boolean", "video_error_or_removed", "boolean"),
-    ("description", "string", "description", "string"),
+    ("description", "string", "description", "string")
+]
