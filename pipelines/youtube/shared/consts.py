@@ -3,6 +3,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+S3_CLEANSED_PATH = os.getenv("S3_CLEANSED_LAYER")
+GLUE_DB = os.getenv("GLUE_CATALOG_DB_NAME")
+GLUE_TABLE = os.getenv("GLUE_CATALOG_TABLE_NAME")
+WRITE_MODE = os.getenv("WRITE_DATA_OP", "append")
+
 INPUT_PATH = "s3://de-youtubedata-raw-useast1-dev/youtube/raw_statistics/"
 OUTPUT_PATH = "s3://de-youtubedata-cleansed-useast1-dev/youtube/raw_statistics/"
 
@@ -32,9 +37,3 @@ MAPPINGS = [
     ("ratings_disabled", "boolean", "ratings_disabled", "boolean"),
     ("video_error_or_removed", "boolean", "video_error_or_removed", "boolean"),
     ("description", "string", "description", "string"),
-]
-
-S3_CLEANSED_PATH = os.getenv("S3_CLEANSED_LAYER")
-GLUE_DB = os.getenv("GLUE_CATALOG_DB_NAME")
-GLUE_TABLE = os.getenv("GLUE_CATALOG_TABLE_NAME")
-WRITE_MODE = os.getenv("WRITE_DATA_OP", "append")
